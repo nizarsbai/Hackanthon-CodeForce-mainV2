@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faInfoCircle, faEnvelope, faUser, faDashboard } from '@fortawesome/free-solid-svg-icons';
 import './Sidebar.css';
 import logo from '../images/ss.png';
+import logo2 from '../images/pp.jpg'
 import React, { useState } from 'react';
 
 const Sidebar = () => {
@@ -18,6 +19,15 @@ const Sidebar = () => {
       <img src={logo} alt="Logo" className="sidebar-logo-img" />
       </div>
       <div className="sidebar-menu">
+        <div className='circulard'>
+          <img class="circular" src={logo2} />
+          
+        </div>
+        <div>
+        <div><medium className="named">Achraf Yacine</medium></div>
+        <medium className="namedd">our-dev-ed.develop.my.salesforce.com</medium>
+      </div>
+
         <Link to="/"
           className={`sidebar-item ${selectedItem === 'home' ? 'active' : ''}`}
           onClick={() => handleItemClick('home')}>

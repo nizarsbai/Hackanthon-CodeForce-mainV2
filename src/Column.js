@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Droppable, Draggable } from 'react-beautiful-dnd';
 import Modal from 'react-modal';
 import axios from 'axios';
-import { faAlignLeft } from '@fortawesome/free-solid-svg-icons';
+import { faAlignLeft, faBicycle, faListNumeric } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import './column.css';  
@@ -23,7 +23,7 @@ function Column({ title, status, items, setItems, selectedProjectName, setSelect
 
 
   const [formData, setFormData] = useState({
-    Name: 'A',
+    Name: 'a',
     title__c: '',
     description__c: '',
     statut__c: '',
@@ -114,7 +114,7 @@ function Column({ title, status, items, setItems, selectedProjectName, setSelect
         date__c:selectedItemDate
       }, {
         headers :{
-          Authorization : 'Bearer 00D8e000000SiXZ!ARkAQEvqk4.wDcdQ86561346Ts4mT_4CyblmoJBuhHXGMVBw78z_MICrQNBwQxCDxVTPmCvPj_CgnyCTLO9c0TgkcOA_wgvG'
+          Authorization : 'Bearer 00D8e000000SiXZ!ARkAQAdpj0STvy7KAWG1yPg4f9b1XzSCupTb17y6ZkaweHWoui0z7K_KpxEzwFjJAEm6muG4CmFz2QPkgqkgJmnO6bYBHZOE'
         }
       });
       console.log(response.data)
@@ -124,6 +124,12 @@ function Column({ title, status, items, setItems, selectedProjectName, setSelect
       console.log(error)
     }
   }
+
+  const getRandomNumber = () => {
+    return Math.floor(Math.random() * 4) + 1;
+  };
+
+  const randomNumber = getRandomNumber();
 
   return (
     <div className="column">
@@ -144,10 +150,17 @@ function Column({ title, status, items, setItems, selectedProjectName, setSelect
                     onClick={() => openModal(item)}
                   >
                     <div className="item-content">
+                    
                     <div className="title-container">
-                      <h3>{item.title__c} {item.Name} {item.Id}</h3>
+                    
+                      <h3>{item.title__c} <span className='sprint'>sprint {randomNumber}</span></h3>
+                      
                       </div>
+                      
+                      
                       <FontAwesomeIcon icon={faAlignLeft} className="align-icon" />
+                      
+                      
                   </div>
                   </div>
                 )}
@@ -227,7 +240,8 @@ function Column({ title, status, items, setItems, selectedProjectName, setSelect
           <label>
             <b>Statut :</b>
             <select name="statut__c" value={formData.statut__c} onChange={handleChange} className='input-field'>
-            <option value="to do">To do</option>
+            <option>----</option>
+            <option value="to do">to do</option>
             <option value="in Progress">In Progress</option>
             <option value="done">Done</option>
           </select>

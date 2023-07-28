@@ -19,7 +19,7 @@ const Users = () => {
         const response = await axios.get(url, {
           headers: {
             Authorization:
-              'Bearer 00D8e000000SiXZ!ARkAQEvqk4.wDcdQ86561346Ts4mT_4CyblmoJBuhHXGMVBw78z_MICrQNBwQxCDxVTPmCvPj_CgnyCTLO9c0TgkcOA_wgvG',
+              'Bearer 00D8e000000SiXZ!ARkAQG5nrSb5zXeOKYG6j4at_GtTyAzQUNDbkebSPvQWr242zcIWUQfjU2NtxFn98xXRAyPoJp2o0r5iQ_GoupXVZL.pBTZW',
           },
         });
 
@@ -40,7 +40,7 @@ const Users = () => {
 
   return (
     <div className="users">
-      <h1>Utilisateurs Salesforce</h1>
+      <h1 className='text'>Utilisateurs Salesforce</h1>
       <form className="search-bar" onSubmit={handleSearch}>
         <input
           className="search-input"

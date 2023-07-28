@@ -15,7 +15,7 @@ a:focus {
 }
 
 .sidescroll {
-    max-height: 1600px; /* Set the desired height for the scrollable container */
+    max-height: 1750px;
   overflow-y: auto;
 }
 

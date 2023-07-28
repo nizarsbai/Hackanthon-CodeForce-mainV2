@@ -77,14 +77,14 @@ function Home() {
     <div className="page-container" style={{ overflowY: 'scroll', height: '100vh' }}>
       <main className="grid">
         <div className="custom-form-container">
-          <form className="custom-form" onSubmit={handleNewNameSubmit} style={{paddingTop:'30px'}}>
+          <form className="custom-form" onSubmit={handleNewNameSubmit} style={{paddingTop:'10px'}}>
             <input
               type="text"
               value={newName}
               onChange={(e) => setNewName(e.target.value)}
-              placeholder="Entrer un nom"
+              placeholder="Créer un projet"
             />
-            <button type="submit">Ajouter</button>
+            <button type="submit" style={{marginBottom:'10px'}}>Créer</button>
           </form>
         </div>
 
